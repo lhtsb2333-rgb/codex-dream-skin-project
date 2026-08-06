@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "contentNotice": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。",
+  "diagnosisReference": "compatibility-diagnosis.example.json",
+  "changedFiles": [
+    {
+      "path": "dream-skin/assets/renderer-inject.js",
+      "reason": "识别当前空项目语义标记，不改变布局。",
+      "scope": "runtime"
+    },
+    {
+      "path": "dream-skin/tests/renderer-inject.test.mjs",
+      "reason": "覆盖旧/新外壳、状态切换和辅助窗口排除。",
+      "scope": "test"
+    }
+  ],
+  "tests": [
+    {
+      "command": "node dream-skin/tests/renderer-inject.test.mjs",
+      "status": "pass",
+      "evidenceType": "automated",
+      "notes": "旧版、当前版、状态切换和辅助窗口夹具全部通过。"
+    },
+    {
+      "command": "真实一次性注入与截图",
+      "status": "not-run",
+      "evidenceType": "live-injection",
+      "notes": "本示例没有获得真实 UI 测试权限。"
+    }
+  ],
+  "invariants": {
+    "officialPackageUnchanged": true,
+    "nativeLayoutPreserved": true,
+    "auxiliaryWindowsExcluded": true,
+    "themeImportDoesNotRestart": true
+  },
+  "liveTesting": {
+    "authorized": false,
+    "performed": false,
+    "notes": "本报告只声明隔离回归测试结果。"
+  },
+  "rollback": "还原两个已修改文件，或恢复其修改前备份。",
+  "decision": "blocked"
+}

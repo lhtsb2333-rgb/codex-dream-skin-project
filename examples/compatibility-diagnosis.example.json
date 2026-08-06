@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "contentNotice": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。",
+  "symptom": "从普通对话切换到尚未开始对话的新项目后，背景皮肤消失。",
+  "inspectedLayers": [
+    {
+      "layer": "installation",
+      "status": "pass",
+      "evidence": ["已动态发现当前注册的 Store 包及运行时路径。"]
+    },
+    {
+      "layer": "cdp",
+      "status": "pass",
+      "evidence": ["回环 version/list 端点和 Browser 身份与状态文件一致。"]
+    },
+    {
+      "layer": "identity",
+      "status": "pass",
+      "evidence": ["恰好一个语义 main 目标同时具有已知侧边栏和输入框标记。"]
+    },
+    {
+      "layer": "injection",
+      "status": "pass",
+      "evidence": ["注入标记、样式元素和预期皮肤版本均存在。"]
+    },
+    {
+      "layer": "page-state",
+      "status": "fail",
+      "evidence": ["新版空项目页面不包含当前已识别的首页标记，因此错误落入 generic 状态。"]
+    }
+  ],
+  "primaryFailingLayer": "page-state",
+  "rootCause": "当前空项目的稳定语义标记没有进入 home-or-empty-project 分类器。",
+  "repairBoundary": [
+    "将一个稳定语义标记作为 OR 分支加入页面状态分类器。",
+    "不修改 CSS 布局几何或主窗口身份规则。"
+  ],
+  "regressionScope": [
+    "旧版首页外壳",
+    "当前空项目外壳",
+    "对话到首页的路由切换",
+    "辅助窗口排除"
+  ],
+  "confidence": 0.94,
+  "decision": "ready-for-fix"
+}

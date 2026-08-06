@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "contentNotice": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。",
+  "requestSummary": "新增文档型 Prompt 模板，不改变任何运行时行为。",
+  "mutations": [
+    {
+      "action": "create",
+      "target": "prompts/common/content-safety-review.md",
+      "owner": "dream-skin",
+      "allowed": true,
+      "rollback": "发布前可移除这个尚未被运行代码引用的新增文档。",
+      "evidence": "该文件不位于运行时、安装器或注入资源路径中。"
+    }
+  ],
+  "protectedAreas": [
+    {
+      "area": "官方 ChatGPT 包及用户数据",
+      "changed": false,
+      "evidence": "Git 差异只包含 prompts、schemas、examples 和说明文档。"
+    }
+  ],
+  "testEvidence": [
+    {
+      "type": "static",
+      "status": "pass",
+      "description": "已检查 JSON 语法与仓库差异。"
+    },
+    {
+      "type": "live-ui",
+      "status": "not-run",
+      "description": "运行代码没有变化，因此本示例不要求真实 UI 测试。"
+    }
+  ],
+  "decision": "pass"
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/codex-dream-skin/schemas/implementation-report.schema.json",
+  "title": "实施与回归验证报告",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "contentNotice", "diagnosisReference", "changedFiles", "tests", "invariants", "liveTesting", "rollback", "decision"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "contentNotice": { "const": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。" },
+    "diagnosisReference": { "type": "string", "minLength": 1 },
+    "changedFiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "reason", "scope"],
+        "properties": {
+          "path": { "type": "string" },
+          "reason": { "type": "string" },
+          "scope": { "enum": ["runtime", "style", "test", "documentation", "build"] }
+        }
+      }
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["command", "status", "evidenceType", "notes"],
+        "properties": {
+          "command": { "type": "string" },
+          "status": { "enum": ["pass", "fail", "not-run"] },
+          "evidenceType": { "enum": ["static", "automated", "isolated", "live-injection", "screenshot", "lifecycle"] },
+          "notes": { "type": "string" }
+        }
+      },
+      "minItems": 1
+    },
+    "invariants": {
+      "type": "object",
+      "additionalProperties": { "type": "boolean" },
+      "minProperties": 1
+    },
+    "liveTesting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authorized", "performed", "notes"],
+      "properties": {
+        "authorized": { "type": "boolean" },
+        "performed": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "rollback": { "type": "string", "minLength": 1 },
+    "decision": { "enum": ["pass", "blocked", "fail"] }
+  }
+}

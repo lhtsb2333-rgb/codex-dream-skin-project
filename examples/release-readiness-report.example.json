@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "contentNotice": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。",
+  "version": "1.4.8-示例",
+  "commit": "abcdef0123456789",
+  "artifacts": [
+    {
+      "name": "源码",
+      "path": "source/v1.4.8-example",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "versionMatch": true
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "ChatGPT 皮肤管理器",
+      "target": "current-program/Codex Dream Skin.exe",
+      "current": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "自动回归测试",
+      "status": "pass",
+      "evidence": "所有必需命令均以退出码 0 完成。"
+    },
+    {
+      "name": "Windows 真实验收",
+      "status": "not-run",
+      "evidence": "本示例故意展示一个会阻塞发布的缺失检查。"
+    }
+  ],
+  "contentSafetyDecision": "pass",
+  "rollback": "真实验收通过前，将已校验哈希的上一版本保留在可恢复归档中。",
+  "decision": "blocked"
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "contentNotice": "本文为 AI 生成或经 AI 编辑的虚构文本，不代表任何个人的个人观点、政治立场或社会观点。",
+  "title": "灯笼索引",
+  "narrative": "黎明前，米拉在档案馆台阶上发现了一盏没有点亮的灯。黄铜灯架上刻着七道细痕，正好对应她承诺检查的七排书架。她提起灯时，门下出现了一条浅色光线，却没有通向禁闭库房，而是停在一只被遗忘的目录抽屉前。抽屉里只有一张卡片，上面的字迹属于米拉本人，日期却写着明天。她没有打开库房，而是把卡片编号抄进笔记，坐在门边等待档案管理员。面对诱人的捷径，她选择先保留证据。",
+  "continuity": {
+    "characters": ["米拉", "档案管理员"],
+    "location": "档案馆入口与目录大厅",
+    "time": "黎明前",
+    "newFacts": [
+      "灯架上有七道刻痕。",
+      "目录卡片是米拉的字迹，日期却是明天。"
+    ],
+    "openThreads": [
+      "是谁放下了灯？",
+      "卡片为什么写着明天的日期？"
+    ]
+  },
+  "acceptance": {
+    "requiredBeatsPresent": true,
+    "forbiddenContentAbsent": true,
+    "continuityConsistent": true,
+    "originalityChecked": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/codex-dream-skin/schemas/narrative-output.schema.json",
+  "title": "原创叙事输出",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "contentNotice", "title", "narrative", "continuity", "acceptance"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "contentNotice": {
+      "const": "本文为 AI 生成或经 AI 编辑的虚构文本，不代表任何个人的个人观点、政治立场或社会观点。"
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "narrative": { "type": "string", "minLength": 100 },
+    "continuity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["characters", "location", "time", "newFacts", "openThreads"],
+      "properties": {
+        "characters": { "type": "array", "items": { "type": "string" } },
+        "location": { "type": "string" },
+        "time": { "type": "string" },
+        "newFacts": { "type": "array", "items": { "type": "string" } },
+        "openThreads": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requiredBeatsPresent", "forbiddenContentAbsent", "continuityConsistent", "originalityChecked"],
+      "properties": {
+        "requiredBeatsPresent": { "type": "boolean" },
+        "forbiddenContentAbsent": { "type": "boolean" },
+        "continuityConsistent": { "type": "boolean" },
+        "originalityChecked": { "type": "boolean" }
+      }
+    }
+  }
+}

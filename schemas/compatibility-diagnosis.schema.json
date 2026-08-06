@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/codex-dream-skin/schemas/compatibility-diagnosis.schema.json",
+  "title": "兼容性诊断报告",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "contentNotice", "symptom", "inspectedLayers", "primaryFailingLayer", "rootCause", "repairBoundary", "regressionScope", "confidence", "decision"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "contentNotice": { "const": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。" },
+    "symptom": { "type": "string", "minLength": 1 },
+    "inspectedLayers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["layer", "status", "evidence"],
+        "properties": {
+          "layer": { "enum": ["installation", "cdp", "identity", "injection", "page-state", "css", "lifecycle", "release"] },
+          "status": { "enum": ["pass", "fail", "not-inspected"] },
+          "evidence": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+        }
+      },
+      "minItems": 1
+    },
+    "primaryFailingLayer": { "enum": ["installation", "cdp", "identity", "injection", "page-state", "css", "lifecycle", "release", "inconclusive"] },
+    "rootCause": { "type": "string", "minLength": 1 },
+    "repairBoundary": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "regressionScope": { "type": "array", "items": { "type": "string" }, "minItems": 4 },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "decision": { "enum": ["ready-for-fix", "needs-more-evidence", "blocked"] }
+  }
+}

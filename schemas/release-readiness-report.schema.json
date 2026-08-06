@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/codex-dream-skin/schemas/release-readiness-report.schema.json",
+  "title": "发布就绪报告",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "contentNotice", "version", "commit", "artifacts", "shortcuts", "checks", "contentSafetyDecision", "rollback", "decision"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "contentNotice": { "const": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。" },
+    "version": { "type": "string", "minLength": 1 },
+    "commit": { "type": "string", "minLength": 7 },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "path", "sha256", "versionMatch"],
+        "properties": {
+          "name": { "type": "string" },
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[a-fA-F0-9]{64}$" },
+          "versionMatch": { "type": "boolean" }
+        }
+      }
+    },
+    "shortcuts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "target", "current"],
+        "properties": {
+          "name": { "type": "string" },
+          "target": { "type": "string" },
+          "current": { "type": "boolean" }
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "status", "evidence"],
+        "properties": {
+          "name": { "type": "string" },
+          "status": { "enum": ["pass", "fail", "not-run"] },
+          "evidence": { "type": "string" }
+        }
+      },
+      "minItems": 1
+    },
+    "contentSafetyDecision": { "enum": ["pass", "blocked", "fail"] },
+    "rollback": { "type": "string", "minLength": 1 },
+    "decision": { "enum": ["publish", "blocked", "fail"] }
+  }
+}

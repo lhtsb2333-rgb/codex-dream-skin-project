@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "contentNotice": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。",
+  "releaseId": "源码审查示例",
+  "inventory": {
+    "fileCount": 52,
+    "textFiles": 50,
+    "visualAssets": 2,
+    "reviewedFiles": 52
+  },
+  "findings": [
+    {
+      "category": "political",
+      "severity": "info",
+      "file": "CONTENT_NOTICE.md",
+      "description": "政治相关词语只出现在中立的内容声明中，不构成立场表达。",
+      "status": "safe-context"
+    }
+  ],
+  "aiContentNotice": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。",
+  "evidence": [
+    "已检查受版本控制文件清单",
+    "凭据与绝对路径扫描没有未解决匹配",
+    "已对抽象演示图片进行视觉检查"
+  ],
+  "decision": "pass"
+}

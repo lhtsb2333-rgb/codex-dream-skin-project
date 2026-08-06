@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/codex-dream-skin/schemas/change-scope-report.schema.json",
+  "title": "变更范围与安全报告",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "contentNotice", "requestSummary", "mutations", "protectedAreas", "testEvidence", "decision"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "contentNotice": { "const": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。" },
+    "requestSummary": { "type": "string", "minLength": 1 },
+    "mutations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["action", "target", "owner", "allowed", "rollback", "evidence"],
+        "properties": {
+          "action": { "enum": ["create", "read", "update", "delete", "launch", "stop", "listen", "shortcut"] },
+          "target": { "type": "string", "minLength": 1 },
+          "owner": { "enum": ["dream-skin", "official-app", "system", "user-data", "unknown"] },
+          "allowed": { "type": "boolean" },
+          "rollback": { "type": "string" },
+          "evidence": { "type": "string" }
+        }
+      }
+    },
+    "protectedAreas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["area", "changed", "evidence"],
+        "properties": {
+          "area": { "type": "string" },
+          "changed": { "type": "boolean" },
+          "evidence": { "type": "string" }
+        }
+      },
+      "minItems": 1
+    },
+    "testEvidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "status", "description"],
+        "properties": {
+          "type": { "enum": ["static", "automated", "isolated", "live-ui", "not-run"] },
+          "status": { "enum": ["pass", "fail", "not-run"] },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "decision": { "enum": ["pass", "blocked", "fail"] }
+  }
+}

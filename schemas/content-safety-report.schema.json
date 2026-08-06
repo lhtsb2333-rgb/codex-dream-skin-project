@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/codex-dream-skin/schemas/content-safety-report.schema.json",
+  "title": "内容安全审查报告",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "contentNotice", "releaseId", "inventory", "findings", "aiContentNotice", "evidence", "decision"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "contentNotice": { "const": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。" },
+    "releaseId": { "type": "string", "minLength": 1 },
+    "inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fileCount", "textFiles", "visualAssets", "reviewedFiles"],
+      "properties": {
+        "fileCount": { "type": "integer", "minimum": 0 },
+        "textFiles": { "type": "integer", "minimum": 0 },
+        "visualAssets": { "type": "integer", "minimum": 0 },
+        "reviewedFiles": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["category", "severity", "file", "description", "status"],
+        "properties": {
+          "category": { "enum": ["personal-data", "credential", "local-path", "private-log", "license", "asset-rights", "political", "social-sensitive", "public-figure", "ai-notice", "other"] },
+          "severity": { "enum": ["info", "low", "medium", "high", "critical"] },
+          "file": { "type": "string" },
+          "description": { "type": "string" },
+          "status": { "enum": ["safe-context", "resolved", "unresolved"] }
+        }
+      }
+    },
+    "aiContentNotice": { "const": "本文本由 AI 生成或经 AI 编辑，不代表任何个人的个人观点、政治立场或社会观点。" },
+    "evidence": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+    "decision": { "enum": ["pass", "blocked", "fail"] }
+  }
+}
