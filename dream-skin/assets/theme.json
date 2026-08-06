@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "open-source-aurora-demo",
+  "name": "Open Source Aurora",
+  "brandSubtitle": "DREAM SKIN DEMO",
+  "tagline": "A neutral example theme for local testing.",
+  "projectPrefix": "Project · ",
+  "projectLabel": "Choose project",
+  "statusText": "DEMO THEME ACTIVE",
+  "quote": "MAKE SOMETHING WONDERFUL",
+  "image": "open-source-demo-background.png",
+  "appearance": "auto",
+  "art": {
+    "focusX": 0.35,
+    "focusY": 0.5,
+    "safeArea": "left",
+    "taskMode": "ambient"
+  }
+}

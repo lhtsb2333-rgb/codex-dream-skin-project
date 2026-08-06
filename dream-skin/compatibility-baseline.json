@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "updatedForChatGPTVersion": "26.730.8199.0",
+  "identity": {
+    "protocol": "app:",
+    "shellAny": ["main.main-surface", "main"],
+    "required": ["aside.app-shell-left-panel"],
+    "routeAny": [".composer-surface-chrome", "textarea:not([aria-hidden=true])", "[role=textbox][contenteditable=true]", "[role=main]"]
+  },
+  "states": {
+    "homeOrEmptyProjectAny": [
+      "[data-testid=home-icon]",
+      "[class~=group/home-suggestions]",
+      "[class*=container-name:home-main-content]",
+      "[class*=_homeUtilityBar_]"
+    ],
+    "threadAny": [
+      ".thread-scroll-container",
+      "[data-thread-scroll-footer]",
+      "[data-message-author-role]"
+    ]
+  },
+  "auxiliaryWindow": {
+    "exampleRoute": "app://-/index.html?initialRoute=%2Favatar-overlay",
+    "mustNotMatchIdentity": true
+  },
+  "forbiddenCoreSelectorPatterns": [
+    "hashed-class-as-only-anchor",
+    "localized-visible-text",
+    "three-or-more-first-child-or-nth-child-hops"
+  ],
+  "releaseInvariants": [
+    "native-header-buttons-remain-reachable",
+    "sidebar-collapse-remains-reachable",
+    "chat-and-work-remain-functional",
+    "auxiliary-windows-remain-unskinned",
+    "only-dream-skin-owned-files-are-modified"
+  ]
+}

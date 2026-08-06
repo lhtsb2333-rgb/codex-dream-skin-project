@@ -1,0 +1,22 @@
+# Build outputs and local state
+dist/
+build/
+*.exe
+*.zip
+*.sha256.txt
+
+# Never publish runtime state, logs, imported themes, or user artwork
+CodexDreamSkin/
+active-theme/
+themes/
+images/
+*.log
+state*.json
+
+# Editor and OS files
+.vs/
+.vscode/
+bin/
+obj/
+Thumbs.db
+Desktop.ini
