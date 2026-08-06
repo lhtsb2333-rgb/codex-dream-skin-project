@@ -1,6 +1,7 @@
 # Build outputs and local state
 dist/
 build/
+tools/
 *.exe
 *.zip
 *.sha256.txt

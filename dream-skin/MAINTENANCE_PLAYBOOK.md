@@ -102,9 +102,9 @@ $diagnose = Join-Path (Split-Path -Parent $state.injectorPath) 'diagnose-shell.m
 
 每次发布必须同步：
 
-- `E:\Codex Dream Skin\当前程序`
-- `E:\Codex Dream Skin\安装与分发`
-- `E:\Codex Dream Skin\项目资料\vX.Y.Z-source`
+- `<release-root>\current-program`
+- `<release-root>\distribution`
+- `<release-root>\source\vX.Y.Z`
 - 桌面“ChatGPT 皮肤管理器”
 - 桌面和开始菜单“ChatGPT（带皮肤启动）”
 - 开机启动“ChatGPT（带皮肤自动启动）”
