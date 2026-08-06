@@ -10,6 +10,10 @@ This repository is the publishable source edition. It includes:
 - Windows manager / installer / uninstaller source code.
 - A neutral, original abstract demo background.
 
+## Upstream attribution
+
+This is an independently maintained derivative of [Fei-Away/Codex-Dream-Skin](https://github.com/Fei-Away/Codex-Dream-Skin), which is published under the MIT License. The derivative keeps the required attribution and license terms while adding a Windows-oriented manager, compatibility diagnostics, safety checks, and a neutral demonstration theme. It is not an official upstream release or a replacement for it. See [UPSTREAM.md](UPSTREAM.md).
+
 It intentionally excludes:
 
 - Character artwork, user-imported themes, previews, and personal assets.
