@@ -2,6 +2,8 @@
 
 An unofficial, reversible Windows theme layer for the Store-installed ChatGPT/Codex desktop app. It injects visual styling through a loopback-only Chromium DevTools Protocol session and does **not** modify `WindowsApps`, `app.asar`, app signatures, chat history, projects, or login data.
 
+> **Content notice:** Explanatory text, release notes, examples, and sample metadata in this repository are generated or edited with AI assistance. They are not personal opinions or political/social statements. See [CONTENT_NOTICE.md](CONTENT_NOTICE.md).
+
 ## Open-source edition
 
 This repository is the publishable source edition. It includes:

@@ -21,3 +21,7 @@ It may create or update its own theme copies, state files, logs, a loopback-only
 - Review PowerShell changes for every write or removal operation; managed-root validation is mandatory.
 - Do not add code that takes ownership of package directories, disables endpoint protection, or changes execution policy beyond a user-invoked process.
 - Test with a non-production profile before releasing a compatibility update.
+
+## Content-safety review before release
+
+Before publishing any release, scan text, metadata, examples, and images for personal information, credentials, political or social advocacy, real-world political messaging, public-figure commentary, and other sensitive social content. Include [CONTENT_NOTICE.md](CONTENT_NOTICE.md) in every release. Release notes and other explanatory text must state that they are AI-generated or AI-edited and do not represent personal opinions.
