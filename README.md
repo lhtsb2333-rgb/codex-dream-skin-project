@@ -4,6 +4,10 @@ An unofficial, reversible Windows theme layer for the Store-installed ChatGPT/Co
 
 > **Content notice:** Explanatory text, release notes, examples, and sample metadata in this repository are generated or edited with AI assistance. They are not personal opinions or political/social statements. See [CONTENT_NOTICE.md](CONTENT_NOTICE.md).
 
+## Start the downloaded source package
+
+On Windows, double-click [`START-CODEX-DREAM-SKIN.cmd`](START-CODEX-DREAM-SKIN.cmd) in the repository root. It opens the theme manager using relative paths, so the folder can be moved without editing a shortcut. The source edition requires PowerShell 5.1+, Node.js 22+, and the Microsoft Store ChatGPT/Codex app. This entry point does not restart ChatGPT until you choose to apply or restore a theme.
+
 ## Open-source edition
 
 This repository is the publishable source edition. It includes:

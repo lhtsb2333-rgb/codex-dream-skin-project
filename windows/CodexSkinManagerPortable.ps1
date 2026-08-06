@@ -10,6 +10,12 @@ param(
 $ErrorActionPreference = 'Stop'
 $script:PackageRoot = $PSScriptRoot
 $script:BundledRoot = Join-Path $script:PackageRoot 'dream-skin'
+if (-not (Test-Path -LiteralPath $script:BundledRoot -PathType Container)) {
+  $sourceBundle = Join-Path (Split-Path -Parent $script:PackageRoot) 'dream-skin'
+  if (Test-Path -LiteralPath $sourceBundle -PathType Container) {
+    $script:BundledRoot = $sourceBundle
+  }
+}
 $script:BundledScripts = Join-Path $script:BundledRoot 'scripts'
 $script:StateRoot = Join-Path $env:LOCALAPPDATA 'CodexDreamSkin'
 $script:SettingsPath = Join-Path $script:StateRoot 'manager-settings.json'
