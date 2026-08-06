@@ -8,7 +8,7 @@ if (-not (Test-Path -LiteralPath $launcher -PathType Leaf)) {
 }
 
 $desktop = [Environment]::GetFolderPath('Desktop')
-$shortcutPath = Join-Path $desktop 'Codex Dream Skin（源码版）.lnk'
+$shortcutPath = Join-Path $desktop 'Codex Dream Skin - Source.lnk'
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut($shortcutPath)
 $shortcut.TargetPath = $env:ComSpec
